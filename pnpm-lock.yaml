@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@astrojs/svelte':
-    specifier: ^3.1.1
-    version: 3.1.1(astro@3.0.12)(svelte@4.2.0)(typescript@5.1.6)(vite@4.4.9)
+    specifier: ^4.0.2
+    version: 4.0.2(astro@3.0.12)(svelte@4.2.0)(typescript@5.1.6)(vite@4.4.9)
   '@astrojs/tailwind':
     specifier: ^5.0.0
     version: 5.0.0(astro@3.0.12)(tailwindcss@3.3.3)
@@ -19,10 +19,13 @@ dependencies:
     version: 3.0.12
   drizzle-orm:
     specifier: ^0.28.6
-    version: 0.28.6(@vercel/postgres@0.4.1)(postgres@3.3.5)
+    version: 0.28.6(@vercel/postgres@0.4.1)(pg@8.11.3)(postgres@3.3.5)
   flowbite:
     specifier: ^1.8.1
     version: 1.8.1
+  pg:
+    specifier: ^8.11.3
+    version: 8.11.3
   postgres:
     specifier: ^3.3.5
     version: 3.3.5
@@ -104,11 +107,11 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/svelte@3.1.1(astro@3.0.12)(svelte@4.2.0)(typescript@5.1.6)(vite@4.4.9):
-    resolution: {integrity: sha512-sPTe43zqFVvZq7qjCgT6vkOpMyKI0uEpqm/X3zSRse0Sn1ZyMEipes2KLmJQvPOZw3Zxy4+PX3E3Ns59hwRX1Q==}
-    engines: {node: '>=16.12.0'}
+  /@astrojs/svelte@4.0.2(astro@3.0.12)(svelte@4.2.0)(typescript@5.1.6)(vite@4.4.9):
+    resolution: {integrity: sha512-XB9Sexq+iW5aUpctDk6zuKHbWIAuPlAnZKbfgaS9VOaOUtx1t12crP9YoKEVcTifXYgoRuWWfeEAm2I8pYlLIQ==}
+    engines: {node: '>=18.14.1'}
     peerDependencies:
-      astro: ^2.10.10
+      astro: ^3.0.11
       svelte: ^3.55.0 || ^4.0.0
     dependencies:
       '@sveltejs/vite-plugin-svelte': 2.4.5(svelte@4.2.0)(vite@4.4.9)
@@ -1225,6 +1228,11 @@ packages:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
 
+  /buffer-writer@2.0.0:
+    resolution: {integrity: sha512-a7ZpuTZU1TRtnwyCNW3I5dc0wWNC3VR9S++Ewyk2HHZdrO3CQJqSpd+95Us590V6AL7JqUAH2IwZ/398PmNFgw==}
+    engines: {node: '>=4'}
+    dev: false
+
   /buffer@5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
     requiresBuild: true
@@ -1576,7 +1584,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.28.6(@vercel/postgres@0.4.1)(postgres@3.3.5):
+  /drizzle-orm@0.28.6(@vercel/postgres@0.4.1)(pg@8.11.3)(postgres@3.3.5):
     resolution: {integrity: sha512-yBe+F9htrlYER7uXgDJUQsTHFoIrI5yMm5A0bg0GiZ/kY5jNXTWoEy4KQtg35cE27sw1VbgzoMWHAgCckUUUww==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -1639,6 +1647,7 @@ packages:
         optional: true
     dependencies:
       '@vercel/postgres': 0.4.1
+      pg: 8.11.3
       postgres: 3.3.5
     dev: false
 
@@ -3051,6 +3060,10 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  /packet-reader@1.0.0:
+    resolution: {integrity: sha512-HAKu/fG3HpHFO0AA8WE8q2g+gBJaZ9MG7fcKk+IJPLTGAD6Psw4443l+9DGRbOIh3/aXr7Phy0TjilYivJo5XQ==}
+    dev: false
+
   /parse-latin@5.0.1:
     resolution: {integrity: sha512-b/K8ExXaWC9t34kKeDV8kGXBkXZ1HCSAZRYE7HR14eA1GlXX5L8iWhs8USJNhQU9q5ci413jCKF0gOyovvyRBg==}
     dependencies:
@@ -3106,9 +3119,27 @@ packages:
       is-reference: 3.0.1
     dev: false
 
+  /pg-cloudflare@1.1.1:
+    resolution: {integrity: sha512-xWPagP/4B6BgFO+EKz3JONXv3YDgvkbVrGw2mTo3D6tVDQRh1e7cqVGvyR3BE+eQgAvx1XhW/iEASj4/jCWl3Q==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /pg-connection-string@2.6.2:
+    resolution: {integrity: sha512-ch6OwaeaPYcova4kKZ15sbJ2hKb/VP48ZD2gE7i1J+L4MspCtBMAx8nMgz7bksc7IojCIIWuEhHibSMFH8m8oA==}
+    dev: false
+
   /pg-int8@1.0.1:
     resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==}
     engines: {node: '>=4.0.0'}
+    dev: false
+
+  /pg-pool@3.6.1(pg@8.11.3):
+    resolution: {integrity: sha512-jizsIzhkIitxCGfPRzJn1ZdcosIt3pz9Sh3V01fm1vZnbnCMgmGl5wvGGdNN2EL9Rmb0EcFoCkixH4Pu+sP9Og==}
+    peerDependencies:
+      pg: '>=8.0'
+    dependencies:
+      pg: 8.11.3
     dev: false
 
   /pg-protocol@1.6.0:
@@ -3124,6 +3155,32 @@ packages:
       postgres-bytea: 1.0.0
       postgres-date: 1.0.7
       postgres-interval: 1.2.0
+    dev: false
+
+  /pg@8.11.3:
+    resolution: {integrity: sha512-+9iuvG8QfaaUrrph+kpF24cXkH1YOOUeArRNYIxq1viYHZagBxrTno7cecY1Fa44tJeZvaoG+Djpkc3JwehN5g==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      pg-native: '>=3.0.1'
+    peerDependenciesMeta:
+      pg-native:
+        optional: true
+    dependencies:
+      buffer-writer: 2.0.0
+      packet-reader: 1.0.0
+      pg-connection-string: 2.6.2
+      pg-pool: 3.6.1(pg@8.11.3)
+      pg-protocol: 1.6.0
+      pg-types: 2.2.0
+      pgpass: 1.0.5
+    optionalDependencies:
+      pg-cloudflare: 1.1.1
+    dev: false
+
+  /pgpass@1.0.5:
+    resolution: {integrity: sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==}
+    dependencies:
+      split2: 4.2.0
     dev: false
 
   /picocolors@1.0.0:
@@ -3651,6 +3708,11 @@ packages:
 
   /space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
+    dev: false
+
+  /split2@4.2.0:
+    resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
+    engines: {node: '>= 10.x'}
     dev: false
 
   /sprintf-js@1.0.3:

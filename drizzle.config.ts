@@ -6,7 +6,6 @@ export default {
   schema: "./src/server/db/schema.ts",
   out: "./drizzle",
   driver: "pg",
-
   dbCredentials: {
     connectionString: POSTGRES_URL,
   },
