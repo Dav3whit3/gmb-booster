@@ -7,6 +7,6 @@ export default {
   out: "./drizzle",
   driver: "pg",
   dbCredentials: {
-    connectionString: POSTGRES_URL,
+    connectionString: `${POSTGRES_URL}?ssl=true`
   },
 } satisfies Config;
